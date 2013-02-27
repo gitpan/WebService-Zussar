@@ -6,7 +6,7 @@ use Carp;
 use utf8;
 
 use version;
-our $VERSION = qv('0.0.1');
+our $VERSION = qv('0.0.2');
 
 use base qw/Class::Accessor/;
 use Data::Recursive::Encode;
@@ -105,7 +105,7 @@ sub fetch {
 	# Store events
 	foreach my $item(@{$js_hash->{event}}){
 		my $item_id = $item->{event_id};
-		push($self->{events}, $item);
+		push(@{$self->{events}}, $item);
 	}
 
 	# Reset iterator
